@@ -1,3 +1,2 @@
 # StartBrowse
 new words
-once
