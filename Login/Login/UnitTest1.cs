@@ -19,7 +19,6 @@ namespace Login
         {
             driver = new ChromeDriver();
             wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-            //driver.Manage().Timeouts().ImplicitlyWait((TimeSpan.FromSeconds(10)));
         }
         [Test]
         public void Enter()
