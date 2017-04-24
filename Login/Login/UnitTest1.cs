@@ -1,10 +1,8 @@
 ﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
-using OpenQA.Selenium.Chrome;
-using System.Threading;
+using OpenQA.Selenium.Firefox;
 
 namespace Login
 {
@@ -12,13 +10,17 @@ namespace Login
     public class LoginAsAdmin
     {
         private IWebDriver driver;
-        private WebDriverWait wait;
-
+        //private WebDriverWait wait;
         [SetUp]
         public void startBrowse()
         {
-            driver = new ChromeDriver();
-            wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+            //driver = new FirefoxDriver();
+            //wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+            FirefoxOptions options = new FirefoxOptions();
+            options.BrowserExecutableLocation = @"C:\Program Files (x86)\Nightly\firefox.exe";
+            options.UseLegacyImplementation = false;
+            driver = new FirefoxDriver(options);
+            driver.Manage().Window.Maximize();
         }
         [Test]
         public void Enter()
@@ -28,7 +30,6 @@ namespace Login
             driver.FindElement(By.Name("username")).SendKeys(Text);
             driver.FindElement(By.Name("password")).SendKeys(Text);
             driver.FindElement(By.TagName("button")).Click();
-            Thread.Sleep(3000);
 
         }
          [TearDown]
