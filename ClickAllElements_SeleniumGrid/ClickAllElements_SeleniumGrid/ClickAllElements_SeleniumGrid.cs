@@ -13,19 +13,18 @@ namespace ClickAllElements_SeleniumGrid
     public class ClickAllElements_SeleniumGrid
     {
         private IWebDriver driverIE;
-        //private WebDriverWait wait;
         private IWebDriver driverChrome;
 
         [SetUp]
 
-        public void Initialized()
+        public void Initialize()
         {
-            Initialized(driverIE, DesiredCapabilities.InternetExplorer());
-            Initialized(driverChrome,DesiredCapabilities.Chrome());
+            Initialize(driverIE, DesiredCapabilities.InternetExplorer());
+            Initialize(driverChrome, DesiredCapabilities.Chrome());
 
         }
 
-        private void Initialized(IWebDriver driver,DesiredCapabilities capabilities)
+        private void Initialize(IWebDriver driver,DesiredCapabilities capabilities)
         {
 
 
